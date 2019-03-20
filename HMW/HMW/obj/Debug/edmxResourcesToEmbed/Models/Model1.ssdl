@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="userdatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="contacttable">
+    <Key>
+      <PropertyRef Name="contactID" />
+    </Key>
+    <Property Name="contactID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="email" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="firstline" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="cityOrTown" Type="char" MaxLength="255" Nullable="false" />
+    <Property Name="postcode" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="mobile" Type="varchar" MaxLength="50" />
+    <Property Name="telephone" Type="varchar" MaxLength="50" />
+    <Property Name="userID" Type="int" />
+  </EntityType>
+  <EntityType Name="educationtable">
+    <Key>
+      <PropertyRef Name="educationID" />
+    </Key>
+    <Property Name="educationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="primaryschool" Type="char" MaxLength="255" />
+    <Property Name="secondaryschool" Type="char" MaxLength="255" />
+    <Property Name="university" Type="char" MaxLength="255" />
+    <Property Name="userID" Type="int" />
+  </EntityType>
+  <EntityType Name="hobbytable">
+    <Key>
+      <PropertyRef Name="hobbyID" />
+    </Key>
+    <Property Name="hobbyID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="hobbytype" Type="char" MaxLength="255" />
+    <Property Name="hobby" Type="char" MaxLength="255" />
+    <Property Name="userID" Type="int" />
+  </EntityType>
+  <EntityType Name="jobtable">
+    <Key>
+      <PropertyRef Name="jobID" />
+    </Key>
+    <Property Name="jobID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="jobtitle" Type="char" MaxLength="255" />
+    <Property Name="salary" Type="int" />
+    <Property Name="userID" Type="int" />
+  </EntityType>
+  <EntityType Name="pettable">
+    <Key>
+      <PropertyRef Name="petID" />
+    </Key>
+    <Property Name="petID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="animal" Type="char" MaxLength="255" />
+    <Property Name="petname" Type="char" MaxLength="255" />
+    <Property Name="age" Type="int" />
+    <Property Name="userID" Type="int" />
+  </EntityType>
+  <EntityType Name="usertable">
+    <Key>
+      <PropertyRef Name="userID" />
+    </Key>
+    <Property Name="userID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="email" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="fname" Type="char" MaxLength="20" Nullable="false" />
+    <Property Name="lname" Type="char" MaxLength="20" Nullable="false" />
+    <Property Name="passwrd" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__contactta__userI__1273C1CD">
+    <End Role="usertable" Type="Self.usertable" Multiplicity="0..1" />
+    <End Role="contacttable" Type="Self.contacttable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="usertable">
+        <PropertyRef Name="userID" />
+      </Principal>
+      <Dependent Role="contacttable">
+        <PropertyRef Name="userID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__education__userI__15502E78">
+    <End Role="usertable" Type="Self.usertable" Multiplicity="0..1" />
+    <End Role="educationtable" Type="Self.educationtable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="usertable">
+        <PropertyRef Name="userID" />
+      </Principal>
+      <Dependent Role="educationtable">
+        <PropertyRef Name="userID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__hobbytabl__userI__22AA2996">
+    <End Role="usertable" Type="Self.usertable" Multiplicity="0..1" />
+    <End Role="hobbytable" Type="Self.hobbytable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="usertable">
+        <PropertyRef Name="userID" />
+      </Principal>
+      <Dependent Role="hobbytable">
+        <PropertyRef Name="userID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__jobtable__userID__25869641">
+    <End Role="usertable" Type="Self.usertable" Multiplicity="0..1" />
+    <End Role="jobtable" Type="Self.jobtable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="usertable">
+        <PropertyRef Name="userID" />
+      </Principal>
+      <Dependent Role="jobtable">
+        <PropertyRef Name="userID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__pettable__userID__1FCDBCEB">
+    <End Role="usertable" Type="Self.usertable" Multiplicity="0..1" />
+    <End Role="pettable" Type="Self.pettable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="usertable">
+        <PropertyRef Name="userID" />
+      </Principal>
+      <Dependent Role="pettable">
+        <PropertyRef Name="userID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="userdatabaseModelStoreContainer">
+    <EntitySet Name="contacttable" EntityType="Self.contacttable" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="educationtable" EntityType="Self.educationtable" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="hobbytable" EntityType="Self.hobbytable" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="jobtable" EntityType="Self.jobtable" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="pettable" EntityType="Self.pettable" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="usertable" EntityType="Self.usertable" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__contactta__userI__1273C1CD" Association="Self.FK__contactta__userI__1273C1CD">
+      <End Role="usertable" EntitySet="usertable" />
+      <End Role="contacttable" EntitySet="contacttable" />
+    </AssociationSet>
+    <AssociationSet Name="FK__education__userI__15502E78" Association="Self.FK__education__userI__15502E78">
+      <End Role="usertable" EntitySet="usertable" />
+      <End Role="educationtable" EntitySet="educationtable" />
+    </AssociationSet>
+    <AssociationSet Name="FK__hobbytabl__userI__22AA2996" Association="Self.FK__hobbytabl__userI__22AA2996">
+      <End Role="usertable" EntitySet="usertable" />
+      <End Role="hobbytable" EntitySet="hobbytable" />
+    </AssociationSet>
+    <AssociationSet Name="FK__jobtable__userID__25869641" Association="Self.FK__jobtable__userID__25869641">
+      <End Role="usertable" EntitySet="usertable" />
+      <End Role="jobtable" EntitySet="jobtable" />
+    </AssociationSet>
+    <AssociationSet Name="FK__pettable__userID__1FCDBCEB" Association="Self.FK__pettable__userID__1FCDBCEB">
+      <End Role="usertable" EntitySet="usertable" />
+      <End Role="pettable" EntitySet="pettable" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="userdatabaseModelStoreContainer" CdmEntityContainer="userdatabaseEntities1">
+    <EntitySetMapping Name="contacttables">
+      <EntityTypeMapping TypeName="userdatabaseModel.contacttable">
+        <MappingFragment StoreEntitySet="contacttable">
+          <ScalarProperty Name="contactID" ColumnName="contactID" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="firstline" ColumnName="firstline" />
+          <ScalarProperty Name="cityOrTown" ColumnName="cityOrTown" />
+          <ScalarProperty Name="postcode" ColumnName="postcode" />
+          <ScalarProperty Name="mobile" ColumnName="mobile" />
+          <ScalarProperty Name="telephone" ColumnName="telephone" />
+          <ScalarProperty Name="userID" ColumnName="userID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="educationtables">
+      <EntityTypeMapping TypeName="userdatabaseModel.educationtable">
+        <MappingFragment StoreEntitySet="educationtable">
+          <ScalarProperty Name="educationID" ColumnName="educationID" />
+          <ScalarProperty Name="primaryschool" ColumnName="primaryschool" />
+          <ScalarProperty Name="secondaryschool" ColumnName="secondaryschool" />
+          <ScalarProperty Name="university" ColumnName="university" />
+          <ScalarProperty Name="userID" ColumnName="userID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="hobbytables">
+      <EntityTypeMapping TypeName="userdatabaseModel.hobbytable">
+        <MappingFragment StoreEntitySet="hobbytable">
+          <ScalarProperty Name="hobbyID" ColumnName="hobbyID" />
+          <ScalarProperty Name="hobbytype" ColumnName="hobbytype" />
+          <ScalarProperty Name="hobby" ColumnName="hobby" />
+          <ScalarProperty Name="userID" ColumnName="userID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="jobtables">
+      <EntityTypeMapping TypeName="userdatabaseModel.jobtable">
+        <MappingFragment StoreEntitySet="jobtable">
+          <ScalarProperty Name="jobID" ColumnName="jobID" />
+          <ScalarProperty Name="jobtitle" ColumnName="jobtitle" />
+          <ScalarProperty Name="salary" ColumnName="salary" />
+          <ScalarProperty Name="userID" ColumnName="userID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="pettables">
+      <EntityTypeMapping TypeName="userdatabaseModel.pettable">
+        <MappingFragment StoreEntitySet="pettable">
+          <ScalarProperty Name="petID" ColumnName="petID" />
+          <ScalarProperty Name="animal" ColumnName="animal" />
+          <ScalarProperty Name="petname" ColumnName="petname" />
+          <ScalarProperty Name="age" ColumnName="age" />
+          <ScalarProperty Name="userID" ColumnName="userID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="usertables">
+      <EntityTypeMapping TypeName="userdatabaseModel.usertable">
+        <MappingFragment StoreEntitySet="usertable">
+          <ScalarProperty Name="userID" ColumnName="userID" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="fname" ColumnName="fname" />
+          <ScalarProperty Name="lname" ColumnName="lname" />
+          <ScalarProperty Name="passwrd" ColumnName="passwrd" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

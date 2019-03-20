@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="NORTHWNDModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="contactinfo">
+    <Key>
+      <PropertyRef Name="contactID" />
+    </Key>
+    <Property Name="contactID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="email" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="firstline" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="citytown" Type="char" MaxLength="255" Nullable="false" />
+    <Property Name="postcode" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="mobile" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="telephone" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="userID" Type="int" />
+  </EntityType>
+  <EntityType Name="education">
+    <Key>
+      <PropertyRef Name="educationID" />
+    </Key>
+    <Property Name="educationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="primaryschool" Type="char" MaxLength="255" />
+    <Property Name="university" Type="char" MaxLength="255" />
+    <Property Name="userID" Type="int" />
+  </EntityType>
+  <EntityType Name="hobby">
+    <Key>
+      <PropertyRef Name="hobbyid" />
+    </Key>
+    <Property Name="hobbyid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="hobbytype" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="hobbyname" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="userID" Type="int" />
+  </EntityType>
+  <EntityType Name="jobs">
+    <Key>
+      <PropertyRef Name="jobID" />
+    </Key>
+    <Property Name="jobID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Field" Type="char" MaxLength="50" />
+    <Property Name="jobtitle" Type="char" MaxLength="50" />
+    <Property Name="salary" Type="int" />
+    <Property Name="userID" Type="int" />
+  </EntityType>
+  <EntityType Name="securityquestions">
+    <Key>
+      <PropertyRef Name="securityID" />
+    </Key>
+    <Property Name="securityID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="question" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="userID" Type="int" />
+  </EntityType>
+  <EntityType Name="userdata">
+    <Key>
+      <PropertyRef Name="userID" />
+    </Key>
+    <Property Name="userID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="fname" Type="char" MaxLength="20" Nullable="false" />
+    <Property Name="lname" Type="char" MaxLength="20" Nullable="false" />
+    <Property Name="passwrd" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__contactin__userI__6EF57B66">
+    <End Role="userdata" Type="Self.userdata" Multiplicity="0..1" />
+    <End Role="contactinfo" Type="Self.contactinfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="userdata">
+        <PropertyRef Name="userID" />
+      </Principal>
+      <Dependent Role="contactinfo">
+        <PropertyRef Name="userID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__education__userI__70DDC3D8">
+    <End Role="userdata" Type="Self.userdata" Multiplicity="0..1" />
+    <End Role="education" Type="Self.education" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="userdata">
+        <PropertyRef Name="userID" />
+      </Principal>
+      <Dependent Role="education">
+        <PropertyRef Name="userID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__hobby__userID__6E01572D">
+    <End Role="userdata" Type="Self.userdata" Multiplicity="0..1" />
+    <End Role="hobby" Type="Self.hobby" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="userdata">
+        <PropertyRef Name="userID" />
+      </Principal>
+      <Dependent Role="hobby">
+        <PropertyRef Name="userID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__jobs__userID__6D0D32F4">
+    <End Role="userdata" Type="Self.userdata" Multiplicity="0..1" />
+    <End Role="jobs" Type="Self.jobs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="userdata">
+        <PropertyRef Name="userID" />
+      </Principal>
+      <Dependent Role="jobs">
+        <PropertyRef Name="userID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__securityq__userI__6FE99F9F">
+    <End Role="userdata" Type="Self.userdata" Multiplicity="0..1" />
+    <End Role="securityquestions" Type="Self.securityquestions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="userdata">
+        <PropertyRef Name="userID" />
+      </Principal>
+      <Dependent Role="securityquestions">
+        <PropertyRef Name="userID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="NORTHWNDModelStoreContainer">
+    <EntitySet Name="contactinfo" EntityType="Self.contactinfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="education" EntityType="Self.education" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="hobby" EntityType="Self.hobby" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="jobs" EntityType="Self.jobs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="securityquestions" EntityType="Self.securityquestions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="userdata" EntityType="Self.userdata" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__contactin__userI__6EF57B66" Association="Self.FK__contactin__userI__6EF57B66">
+      <End Role="userdata" EntitySet="userdata" />
+      <End Role="contactinfo" EntitySet="contactinfo" />
+    </AssociationSet>
+    <AssociationSet Name="FK__education__userI__70DDC3D8" Association="Self.FK__education__userI__70DDC3D8">
+      <End Role="userdata" EntitySet="userdata" />
+      <End Role="education" EntitySet="education" />
+    </AssociationSet>
+    <AssociationSet Name="FK__hobby__userID__6E01572D" Association="Self.FK__hobby__userID__6E01572D">
+      <End Role="userdata" EntitySet="userdata" />
+      <End Role="hobby" EntitySet="hobby" />
+    </AssociationSet>
+    <AssociationSet Name="FK__jobs__userID__6D0D32F4" Association="Self.FK__jobs__userID__6D0D32F4">
+      <End Role="userdata" EntitySet="userdata" />
+      <End Role="jobs" EntitySet="jobs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__securityq__userI__6FE99F9F" Association="Self.FK__securityq__userI__6FE99F9F">
+      <End Role="userdata" EntitySet="userdata" />
+      <End Role="securityquestions" EntitySet="securityquestions" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

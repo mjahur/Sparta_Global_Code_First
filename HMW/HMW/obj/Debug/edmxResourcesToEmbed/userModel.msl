@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="NORTHWNDModelStoreContainer" CdmEntityContainer="NORTHWNDEntities1">
+    <EntitySetMapping Name="contactinfoes">
+      <EntityTypeMapping TypeName="NORTHWNDModel.contactinfo">
+        <MappingFragment StoreEntitySet="contactinfo">
+          <ScalarProperty Name="contactID" ColumnName="contactID" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="firstline" ColumnName="firstline" />
+          <ScalarProperty Name="citytown" ColumnName="citytown" />
+          <ScalarProperty Name="postcode" ColumnName="postcode" />
+          <ScalarProperty Name="mobile" ColumnName="mobile" />
+          <ScalarProperty Name="telephone" ColumnName="telephone" />
+          <ScalarProperty Name="userID" ColumnName="userID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="educations">
+      <EntityTypeMapping TypeName="NORTHWNDModel.education">
+        <MappingFragment StoreEntitySet="education">
+          <ScalarProperty Name="educationID" ColumnName="educationID" />
+          <ScalarProperty Name="primaryschool" ColumnName="primaryschool" />
+          <ScalarProperty Name="university" ColumnName="university" />
+          <ScalarProperty Name="userID" ColumnName="userID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="hobbies">
+      <EntityTypeMapping TypeName="NORTHWNDModel.hobby">
+        <MappingFragment StoreEntitySet="hobby">
+          <ScalarProperty Name="hobbyid" ColumnName="hobbyid" />
+          <ScalarProperty Name="hobbytype" ColumnName="hobbytype" />
+          <ScalarProperty Name="hobbyname" ColumnName="hobbyname" />
+          <ScalarProperty Name="userID" ColumnName="userID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="jobs">
+      <EntityTypeMapping TypeName="NORTHWNDModel.job">
+        <MappingFragment StoreEntitySet="jobs">
+          <ScalarProperty Name="jobID" ColumnName="jobID" />
+          <ScalarProperty Name="Field" ColumnName="Field" />
+          <ScalarProperty Name="jobtitle" ColumnName="jobtitle" />
+          <ScalarProperty Name="salary" ColumnName="salary" />
+          <ScalarProperty Name="userID" ColumnName="userID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="securityquestions">
+      <EntityTypeMapping TypeName="NORTHWNDModel.securityquestion">
+        <MappingFragment StoreEntitySet="securityquestions">
+          <ScalarProperty Name="securityID" ColumnName="securityID" />
+          <ScalarProperty Name="question" ColumnName="question" />
+          <ScalarProperty Name="userID" ColumnName="userID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="userdatas">
+      <EntityTypeMapping TypeName="NORTHWNDModel.userdata">
+        <MappingFragment StoreEntitySet="userdata">
+          <ScalarProperty Name="userID" ColumnName="userID" />
+          <ScalarProperty Name="fname" ColumnName="fname" />
+          <ScalarProperty Name="lname" ColumnName="lname" />
+          <ScalarProperty Name="passwrd" ColumnName="passwrd" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

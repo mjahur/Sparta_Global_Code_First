@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="HMW.CharacterModel" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAGAAAAAgAAAAAAAAAAAAEAAAAAAAAAAAAAQAAAA=</HashCode>
+      <FileName>CharacterModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HMW.User">
+    <Position X="5.25" Y="0.75" Width="1.5" />
+    <AssociationLine Name="universe" Type="HMW.Universe" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="5.5" Y="2.238" />
+        <Point X="5.5" Y="2.331" />
+        <Point X="5.474" Y="2.331" />
+        <Point X="5.474" Y="2.844" />
+        <Point X="4.25" Y="2.844" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAAAAAAKAAAAAEAAAAAABAAAAAAAgAAAAA=</HashCode>
+      <FileName>User.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="description" />
+      <Property Name="group" />
+      <Property Name="universe" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="HMW.Description">
+    <Position X="3" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAEEAACgAAAAAAAAIAA=</HashCode>
+      <FileName>Description.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HMW.Universe">
+    <Position X="2.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAABAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Univers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HMW.Group">
+    <Position X="5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAAAAAAAAAAQAAAAAAAAAABAAAAAAACAAAAA=</HashCode>
+      <FileName>Group.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="universe" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="HMW.Friends">
+    <Position X="7.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAQA=</HashCode>
+      <FileName>Friends.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="user" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="HMW.Foe">
+    <Position X="7.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>Foe.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="user" />
+    </ShowAsAssociation>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

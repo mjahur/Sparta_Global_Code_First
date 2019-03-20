@@ -1,0 +1,24 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+    <div class="row withcontent">
+        <div class="col-md-6">
+            <h2> Social helps you connect and share with the people in your life.</h2>
+        </div>
+        <div class="col-md-6">
+            <h2>Create Account</h2>
+            <h3>It's free and always will be.</h3>
+            @using (Html.BeginForm("Index", "Home", FormMethod.Post))
+            {
+                @Html.Label("", "First name") <br />
+                @Html.TextBox("Enter first name", "") <br />
+                @Html.Label("", "Last name") <br />
+                @Html.TextBox("Enter last name", "") <br />
+                @Html.Label("", "Email") <br />
+                @Html.TextBox("Enter Email", "") <br />
+                @Html.Label("", "Password") <br />
+                @Html.Password("Enter Password", "") <br /><br />
+                <input type="submit" /><br />
+            }
+        </div>
+    </div>
